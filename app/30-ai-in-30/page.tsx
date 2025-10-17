@@ -62,6 +62,35 @@ export default function ThirtyAiInThirty() {
           </p>
         </div>
 
+        {/* Featured Video */}
+        {days[0] && (
+          <div className="mb-20 max-w-4xl mx-auto">
+            <div className="border border-gray-800 bg-gray-900/30 p-8">
+              <div className="flex items-start gap-6 mb-6">
+                <div className="text-6xl font-serif font-bold text-white leading-none">
+                  1
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-serif font-bold mb-2 text-white">
+                    {days[0].title}
+                  </h3>
+                  <p className="text-gray-400 text-lg leading-relaxed mb-6">
+                    {days[0].description}
+                  </p>
+                  <video
+                    controls
+                    className="w-full rounded bg-black"
+                    poster="/day-1-poster.jpg"
+                  >
+                    <source src="/day-1-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Days Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
           {days.map((item) => (
