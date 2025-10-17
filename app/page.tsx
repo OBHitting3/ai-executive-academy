@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Ghost from './components/Ghost';
 
 export default function Home() {
   const [showPromoInput, setShowPromoInput] = useState(false);
@@ -55,8 +57,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
       {/* Casper Ghost Background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
-        <div className="text-[40rem] select-none">👻</div>
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none text-white">
+        <Ghost className="w-[800px] h-[960px]" />
       </div>
 
       {/* Header */}
@@ -87,20 +89,20 @@ export default function Home() {
             </span>
             <span className="block">INTO MASTERING</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              AI IN 30 DAYS
+              Ai IN 30 DAYS
             </span>
           </h2>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            The executive&apos;s roadmap to ChatGPT, Claude, Midjourney, and 10+ AI tools that will 10x your productivity.
+            The executive&apos;s roadmap to ChatGPT, Claude, Grok, Gemini, Perplexity and more Ai tools that will 10x your productivity.
           </p>
 
           {/* Social Proof */}
           <div className="flex items-center justify-center gap-8 mb-12 text-slate-400">
             <div className="text-center">
               <div className="text-3xl font-bold text-white">10+</div>
-              <div className="text-sm">AI Tools Covered</div>
+              <div className="text-sm">Ai Tools Covered</div>
             </div>
             <div className="h-12 w-px bg-slate-700"></div>
             <div className="text-center">
@@ -147,15 +149,12 @@ export default function Home() {
           )}
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex justify-center items-center">
             <button
               onClick={handleBuyNow}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-lg font-semibold rounded-lg shadow-xl shadow-blue-500/50 transition transform hover:scale-105"
+              className="px-12 py-5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-xl font-bold rounded-lg shadow-2xl shadow-blue-500/50 transition transform hover:scale-105"
             >
               Get Started - $99
-            </button>
-            <button className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white text-lg font-semibold rounded-lg border border-slate-600 transition">
-              View Curriculum
             </button>
           </div>
 
@@ -163,6 +162,16 @@ export default function Home() {
           <p className="mt-6 text-sm text-slate-400">
             ✓ Lifetime access • ✓ No subscription • ✓ 30-day money back guarantee
           </p>
+
+          {/* Link to 30 in 30 */}
+          <div className="mt-8">
+            <Link
+              href="/30-ai-in-30"
+              className="text-blue-400 hover:text-blue-300 transition underline text-lg"
+            >
+              Check out the full 30-day curriculum →
+            </Link>
+          </div>
         </div>
 
         {/* What You'll Learn Section */}
@@ -176,7 +185,7 @@ export default function Home() {
           </div>
           <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-lg backdrop-blur">
             <div className="text-4xl mb-4">🎨</div>
-            <h3 className="text-xl font-bold text-white mb-2">AI Design Tools</h3>
+            <h3 className="text-xl font-bold text-white mb-2">Ai Design Tools</h3>
             <p className="text-slate-400">
               Create stunning visuals with Midjourney, DALL-E, and Firefly.
             </p>

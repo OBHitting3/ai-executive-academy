@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Ghost from '../components/Ghost';
 
 interface AITool {
   id: string;
@@ -125,8 +126,8 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
       {/* Casper Ghost Background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
-        <div className="text-[60rem] select-none">👻</div>
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none text-white">
+        <Ghost className="w-[1000px] h-[1200px]" />
       </div>
 
       {/* Header */}

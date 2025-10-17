@@ -2,6 +2,7 @@
 
 import { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Ghost from '../components/Ghost';
 
 function OnboardingContent() {
   const router = useRouter();
@@ -42,8 +43,8 @@ function OnboardingContent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center p-6 relative overflow-hidden">
       {/* Casper Ghost Background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
-        <div className="text-[40rem] select-none">👻</div>
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none text-white">
+        <Ghost className="w-[800px] h-[960px]" />
       </div>
       <div className="max-w-2xl w-full relative z-10">
         {/* Progress */}
