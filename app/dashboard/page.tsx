@@ -157,7 +157,7 @@ export default function DashboardPage() {
             Your AI Toolkit
           </h2>
           <p className="text-xl text-slate-300">
-            Get started with these powerful AI tools. Click "Get Access" to sign up with our recommended platforms.
+            Get started with these powerful AI tools. Click &quot;Get Access&quot; to sign up with our recommended platforms.
           </p>
         </div>
 

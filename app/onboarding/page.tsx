@@ -69,7 +69,7 @@ function OnboardingContent() {
           {step === 1 && (
             <div>
               <h2 className="text-3xl font-bold text-white mb-4">
-                What's your role?
+                What&apos;s your role?
               </h2>
               <p className="text-slate-400 mb-8">
                 This helps us personalize your AI learning path.
@@ -98,7 +98,7 @@ function OnboardingContent() {
                 What do you want to achieve with AI?
               </h2>
               <p className="text-slate-400 mb-8">
-                Select your primary goal (you'll learn all the tools).
+                Select your primary goal (you&apos;ll learn all the tools).
               </p>
               <div className="space-y-3">
                 {[
@@ -128,7 +128,7 @@ function OnboardingContent() {
           {step === 3 && (
             <div>
               <h2 className="text-3xl font-bold text-white mb-4">
-                Let's get you set up
+                Let&apos;s get you set up
               </h2>
               <p className="text-slate-400 mb-8">
                 Just a few details to create your account.
