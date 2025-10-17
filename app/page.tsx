@@ -93,7 +93,7 @@ export default function Home() {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            The executive's roadmap to ChatGPT, Claude, Midjourney, and 10+ AI tools that will 10x your productivity.
+            The executive&apos;s roadmap to ChatGPT, Claude, Midjourney, and 10+ AI tools that will 10x your productivity.
           </p>
 
           {/* Social Proof */}
