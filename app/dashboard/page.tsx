@@ -100,7 +100,7 @@ const AI_TOOLS: AITool[] = [
 
 export default function DashboardPage() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{name: string; promoCode?: string} | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   useEffect(() => {
