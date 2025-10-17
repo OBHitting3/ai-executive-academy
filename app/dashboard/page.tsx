@@ -49,36 +49,36 @@ const AI_TOOLS: AITool[] = [
     tutorial: 'Analyze complex documents and extract insights'
   },
   {
-    id: 'midjourney',
-    name: 'Midjourney',
-    category: 'Image Generation',
-    description: 'Create stunning, professional images from text descriptions.',
-    icon: '🎨',
-    price: '$10/month',
+    id: 'grok',
+    name: 'Grok',
+    category: 'AI Assistant',
+    description: 'xAI\'s conversational AI with real-time knowledge and a unique personality.',
+    icon: '⚡',
+    price: '$16/month',
     features: [
-      'Generate up to 200 images/month',
-      'Commercial usage rights',
-      'Access to latest models',
-      'Private image generation'
+      'Real-time web access',
+      'Direct integration with X (Twitter)',
+      'Uncensored responses',
+      'Access to latest Grok-2 model'
     ],
-    affiliateLink: 'https://www.midjourney.com/', // Add your affiliate link
-    tutorial: 'Create professional graphics for presentations'
+    affiliateLink: 'https://x.ai/', // Add your affiliate link
+    tutorial: 'Get real-time insights and unfiltered perspectives'
   },
   {
-    id: 'elevenlabs',
-    name: 'ElevenLabs',
-    category: 'Voice & Audio',
-    description: 'AI voice generation and cloning. Create professional voiceovers instantly.',
-    icon: '🎙️',
-    price: '$5/month',
+    id: 'gemini',
+    name: 'Gemini Advanced',
+    category: 'AI Assistant',
+    description: 'Google\'s most capable AI model with deep integration into Google Workspace.',
+    icon: '✨',
+    price: '$20/month',
     features: [
-      'Text-to-speech in 29 languages',
-      'Voice cloning',
-      'Commercial license',
-      '30,000 characters/month'
+      'Access to Gemini Ultra',
+      'Integration with Gmail, Docs, Sheets',
+      'Multimodal understanding',
+      '2 TB Google One storage included'
     ],
-    affiliateLink: 'https://elevenlabs.io/', // Add your affiliate link
-    tutorial: 'Generate voiceovers for videos and presentations'
+    affiliateLink: 'https://gemini.google.com/', // Add your affiliate link
+    tutorial: 'Supercharge your Google Workspace with AI'
   },
   {
     id: 'perplexity',
@@ -95,22 +95,6 @@ const AI_TOOLS: AITool[] = [
     ],
     affiliateLink: 'https://www.perplexity.ai/', // Add your affiliate link
     tutorial: 'Research any topic in minutes with cited sources'
-  },
-  {
-    id: 'runway',
-    name: 'Runway',
-    category: 'Video Generation',
-    description: 'Create and edit videos using AI. No video editing experience needed.',
-    icon: '🎬',
-    price: '$12/month',
-    features: [
-      'Text-to-video generation',
-      'AI video editing',
-      'Remove backgrounds',
-      'Green screen effects'
-    ],
-    affiliateLink: 'https://runwayml.com/', // Add your affiliate link
-    tutorial: 'Create professional videos from text prompts'
   }
 ];
 
@@ -139,12 +123,17 @@ export default function DashboardPage() {
     : AI_TOOLS.filter(tool => tool.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      {/* Casper Ghost Background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
+        <div className="text-[60rem] select-none">👻</div>
+      </div>
+
       {/* Header */}
       <header className="bg-slate-900/50 border-b border-slate-700 backdrop-blur sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div>
-            <h1 className="text-xl font-bold text-white">AI Executive Academy</h1>
+            <h1 className="text-xl font-bold text-white">Caper The Faceless Ghost 👻</h1>
             <p className="text-sm text-slate-400">Welcome back, {user.name}</p>
           </div>
           <div className="flex items-center gap-4">
@@ -161,7 +150,7 @@ export default function DashboardPage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12">
+      <main className="max-w-7xl mx-auto px-6 py-12 relative z-10">
         {/* Welcome Section */}
         <div className="mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">
@@ -253,8 +242,8 @@ export default function DashboardPage() {
       </main>
 
       {/* Footer */}
-      <footer className="py-12 text-center text-slate-500 text-sm">
-        <p>© 2025 AI Executive Academy. All rights reserved.</p>
+      <footer className="py-12 text-center text-slate-500 text-sm relative z-10">
+        <p>© 2025 Caper The Faceless Ghost. All rights reserved.</p>
       </footer>
     </div>
   );

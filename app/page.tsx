@@ -29,18 +29,40 @@ export default function Home() {
     }
   };
 
-  const handleBuyNow = () => {
-    // For now, go straight to onboarding
-    // In production, this would go to Stripe checkout
-    router.push('/onboarding');
+  const handleBuyNow = async () => {
+    try {
+      // Create Stripe checkout session
+      const response = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      const data = await response.json();
+
+      if (data.url) {
+        // Redirect to Stripe checkout
+        window.location.href = data.url;
+      } else {
+        console.error('Failed to create checkout session');
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      {/* Casper Ghost Background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+        <div className="text-[40rem] select-none">👻</div>
+      </div>
+
       {/* Header */}
-      <header className="absolute top-0 w-full p-6">
+      <header className="absolute top-0 w-full p-6 z-10">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-white">AI Executive Academy</h1>
+          <h1 className="text-2xl font-bold text-white">Caper The Faceless Ghost 👻</h1>
           <button
             onClick={() => setShowPromoInput(!showPromoInput)}
             className="text-sm text-blue-300 hover:text-blue-200 transition"
@@ -51,7 +73,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <main className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
+      <main className="flex flex-col items-center justify-center min-h-screen px-6 text-center relative z-10">
         <div className="max-w-4xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-blue-500/20 border border-blue-400/30 rounded-full">
@@ -60,9 +82,12 @@ export default function Home() {
 
           {/* Main Headline */}
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Master AI in
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              30 Days
+              CASPER WILL SPOOK YOU
+            </span>
+            <span className="block">INTO MASTERING</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              AI IN 30 DAYS
             </span>
           </h2>
 
@@ -167,8 +192,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="py-12 text-center text-slate-500 text-sm">
-        <p>© 2025 AI Executive Academy. All rights reserved.</p>
+      <footer className="py-12 text-center text-slate-500 text-sm relative z-10">
+        <p>© 2025 Caper The Faceless Ghost. All rights reserved.</p>
       </footer>
     </div>
   );
